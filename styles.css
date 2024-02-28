@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    /* position: relative; */
+    top: 0;
+}
+.bg{
+    display: flex;
+    width: 100%;
+}
+.black-left{
+    background-color: #303030;
+    width: 30%;
+    height: 100vh;
+}
+.white-right{
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+    z-index: 999;
+}
+.logo{
+    font-size: 3rem;
+    color: white;
+    margin-left: 20px;
+    font-weight: 600;
+}
+.navi{
+    display: flex;
+
+}
+.navi li{
+    list-style-type: none;
+
+}
+.navi li a{
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+    position: relative;
+}
+.navi a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 0; 
+    height: 3px;
+    border-radius: 5px;
+    background-color: black;
+    transition: width 0.4s ease;
+}
+
+.navi a:hover::before {
+    width: 100%;
+}
+
+#check{
+    display: none;
+}
+#menu , #close{
+    position: absolute;
+    right: 20px;
+    font-size: 2.4rem;
+    color: white;
+    display: none;
+}
+@media (max-width:800px){
+    .bg{
+        flex-direction: column;
+
+    }
+    .black-left{
+        width: 100%;
+        height: 30vh;
+    }
+    .white-right{
+        width: 100%;
+        height: 70vh;
+    }
+    .navi{
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: -3000px;
+        line-height: 50px;
+        text-align: center;
+        transition: 0.4s ease;
+        background-color: #303030;
+    }
+    .navi li a{
+        color: white;
+    }
+    #blk , #blk1{
+        color: white;
+    }
+    #menu{
+        display: block;
+    }
+    #check:checked ~ .navi{
+        left: 0;
+    }
+    #check:checked ~ #menu{
+        display: none;
+    }
+    #check:checked ~ #close{
+        display: block;
+    }
+    
+}
+.photo{
+    position: absolute;
+    top:20vh;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: white;
+    border: 10px #303030 solid;
+    left: 20%;
+    background-image: url(img/portrait.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90% 115%;
+}
+
+.main-frame{
+    
+    background-image: url(img/bg.jpg);
+    background-color: rgba(255, 255, 255, 0.993);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.ul-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project{
+    position: absolute;
+    top: 78vh;
+    right: 10%;
+    width: auto;
+    height: auto;
+    text-align:left;
+}
+
+.text{
+    position: absolute;
+    top: 40vh;
+    right: 10%;
+    width: auto;
+    height: auto;
+    text-align: end;
+}
+.text h2{
+    font-size: 3rem;
+
+}
+.text h1{
+    font-size: 3.2rem;
+}
+
+
+.icons{
+    font-size: 1.4rem;
+    margin-top: 50px;
+    color: #303030;
+}
+.icons i{
+    padding: 7px;
+    border: 1px #303030 solid;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.text button{
+    padding: 15px 30px;
+    background-color: #303030;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-right: 0;
+}
+@media (max-width:1100px){
+    .text h1{
+        font-size: 2.5rem;
+    }
+    .text h2{
+        font-size: 2rem;
+    }
+}
+@media (max-width:870px){
+    .photo{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+    }
+    .text{
+        position: absolute;
+        top: 60vh;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .text h1{
+        font-size: 2rem;
+    }
+    .text h2{
+        font-size: 1.2rem;
+    }
+    #check:checked ~ .photo{
+        position: absolute;
+        left: -500px;
+    }
+    .icons i{
+        margin-left: 1px;
+        padding: 4px;
+    }
+    .text button{
+        padding: 10px 20px;
+        border: none;
+        font-size: 0.8rem;
+
+    }
+
+
+    .div-about{
+        position: absolute;
+        top: 40vh;
+        right: 10%;
+        width: auto;
+        height: auto;
+        text-align: end;
+    }
+
+    .photo-about{
+        position: absolute;
+        top: 40vh;
+        right: 10%;
+        width: 50%;
+        height: 50%;
+        text-align: end;
+        border: 10px #000000 solid;
+
+    }
+
+}
